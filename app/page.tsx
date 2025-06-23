@@ -70,9 +70,7 @@ const ProfessionalPortfolio = () => {
       organization: "Daffodil International University",
       duration: "May 2025 – Present",
       description: [
-        "Deliver lectures and practical sessions for Computer Fundamentals",
-        "Teach Machine Learning Driven Data Analysis II course",
-        "Conduct Communication Data Insights Lab and Statistical Analysis Lab"
+        "Conducted lectures and labs on Computer Fundamentals, ML-Driven Data Analysis II, and Communication & Statistical Analysis."
       ]
     },
     {
@@ -80,7 +78,11 @@ const ProfessionalPortfolio = () => {
       organization: "Supervised by Dr. Ishtiaque Ahmed, University of Toronto",
       duration: "Jul 2024 – Present",
       description: [
-        "Contributing to the 'AI Readiness in Bangladesh' project"
+        "Led analysis of Bangladesh’s AI readiness, focusing on infrastructure, skills, data, and policy gaps.",
+        "Developed REAPS, an AI policy recommendation tool using national indicators and global best practices.",
+        "Researched Responsible AI (RAI) frameworks and global policies to identify localization strategies for the Global South.",
+        "Contributed to Matra initiative, addressing sociotechnical challenges in inclusive AI policy design.",
+        "Engaged in publication work, including literature review, data analysis, and writing for journals and conferences."
       ]
     },
     {
@@ -89,6 +91,18 @@ const ProfessionalPortfolio = () => {
       duration: "Jan 2024 – Jun 2024",
       description: [
         "Interned at ekShop Network, contributing to innovative projects and solutions"
+      ]
+    },
+    {
+      position: "Summer Research Intern",
+      organization: "University of Illinois Urbana-Champaign (UIUC)",
+      duration: "Jun 2023 – Jan 2024",
+      description: [
+        "Participated in a global, collaborative research program under the guidance of renowned faculty Prof. Darko Marinov at UIUC.",
+        "Conducted experimental research in software engineering, exploring new ideas and innovative approaches to cross-language interoperability.",
+        "Engaged in hands-on coding, empirical analysis, and tool evaluation to validate research hypotheses.",
+        "Contributed to the peer-reviewed paper “GlueTest: Testing Code Translation via Language Interoperability”, later accepted at IEEE ICSME 2024.",
+        "Collaborated with a diverse, international team of researchers, which enriched my ability to think critically, generate original ideas, and communicate effectively in a global academic environment."
       ]
     }
   ];
@@ -106,12 +120,21 @@ const ProfessionalPortfolio = () => {
       ]
     },
     {
-      degree: "Higher Secondary School Certificate (HSC)",
+      degree: "Higher Secondary Certificate (HSC)",
       institution: "Dhaka City College (DCC)",
       duration: "2019",
       details: "GPA: 5.00/5.00",
       achievements: [
         "Received High School Academic Award for exceptional scholastic accomplishments"
+      ]
+    },
+    {
+      degree: "Secondary School Certificate (HSC)",
+      institution: "Udayan Uchcha Madhyamik Bidyalaya (UB)",
+      duration: "2017",
+      details: "GPA: 5.00/5.00",
+      achievements: [
+        "Received many prizes in various academic and extracurricular activities"
       ]
     }
   ];
@@ -174,7 +197,8 @@ const ProfessionalPortfolio = () => {
       title: "GlueTest: Testing Code Translation via Language Interoperability",
       conference: "International Conference on Software Maintenance and Evolution (ICSME)",
       year: "2024",
-      role: "Co-author"
+      role: "Co-author",
+      link: "https://conf.researchr.org/details/icsme-2024/icsme-2024-new-ideas-and-emerging-results-track/10/GlueTest-Testing-Code-Translation-via-Language-Interoperability" 
     }
   ];
 
@@ -261,8 +285,8 @@ const ProfessionalPortfolio = () => {
                   key={item}
                   onClick={() => scrollToSection(item)}
                   className={`capitalize font-medium transition-all relative ${activeSection === item
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-500'
+                    ? 'text-blue-600'
+                    : 'text-gray-700 hover:text-blue-500'
                     }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -312,8 +336,8 @@ const ProfessionalPortfolio = () => {
                   key={item}
                   onClick={() => scrollToSection(item)}
                   className={`capitalize text-left py-3 px-4 rounded-xl font-medium transition-all ${activeSection === item
-                      ? 'bg-blue-50 text-blue-600 shadow-inner'
-                      : 'text-gray-700 hover:bg-gray-50'
+                    ? 'bg-blue-50 text-blue-600 shadow-inner'
+                    : 'text-gray-700 hover:bg-gray-50'
                     }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -595,8 +619,8 @@ const ProfessionalPortfolio = () => {
                       <div className="flex justify-between items-start">
                         <div>
                           <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${project.category === 'Professional' ? 'bg-blue-100 text-blue-800' :
-                              project.category === 'Research' ? 'bg-purple-100 text-purple-800' :
-                                'bg-green-100 text-green-800'
+                            project.category === 'Research' ? 'bg-purple-100 text-purple-800' :
+                              'bg-green-100 text-green-800'
                             }`}>
                             {project.category}
                           </span>
@@ -643,7 +667,14 @@ const ProfessionalPortfolio = () => {
                         className="mb-6 last:mb-0 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl hover:shadow-md transition-all"
                         whileHover={{ x: 5 }}
                       >
-                        <h3 className="text-lg font-bold text-gray-900">{pub.title}</h3>
+                        <a
+                          href={pub.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg font-bold text-gray-900 hover:underline"
+                        >
+                          {pub.title}
+                        </a>
                         <p className="text-blue-600 mt-2">{pub.conference}</p>
                         <div className="flex justify-between text-gray-600 mt-3">
                           <span>{pub.year}</span>
