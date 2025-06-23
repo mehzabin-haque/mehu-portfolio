@@ -47,7 +47,7 @@ const ProfessionalPortfolio = () => {
   const profile = {
     name: "Mehzabin Haque",
     title: "Lecturer in Software Engineering",
-    email: "bssc1233@iit.du.ac.bd",
+    email: "bsse1233@iit.du.ac.bd",
     phone: "+880 1894636853",
     location: "Dhaka, Bangladesh",
     linkedin: "https://www.linkedin.com/in/mehzabin-haque/",
